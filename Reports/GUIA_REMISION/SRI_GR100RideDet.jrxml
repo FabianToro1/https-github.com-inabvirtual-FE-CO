@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SRI_GR100RideDet" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="25f54c3e-8852-4341-9d8f-3c8b91149317">
+	<property name="ireport.zoom" value="1.6105100000000008"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="M_InOut_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[Select qtyEntered as qtydelivered,p.description as name,p.value as productvalue
+ FROM M_InOutLine ml
+Join M_Product p ON ml.M_Product_ID = p.M_Product_ID
+ WHERE M_InOut_ID = $P{M_InOut_ID} and ml.isdescription = 'N' AND ml.IsActive = 'Y' order by ml.line]]>
+	</queryString>
+	<field name="qtydelivered" class="java.math.BigDecimal"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="productvalue" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<columnHeader>
+		<band height="36">
+			<staticText>
+				<reportElement x="1" y="12" width="89" height="20" uuid="f1406223-2294-487e-aa4f-2e2c0bbd17a7"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="129" y="13" width="218" height="20" uuid="21822ef0-d4cf-4c04-8846-520629da2384"/>
+				<text><![CDATA[Descripción]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="364" y="14" width="100" height="20" uuid="b168334d-063b-455d-a0a6-a8267c10869e"/>
+				<text><![CDATA[Código Principal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="15" width="83" height="20" uuid="9233fc6c-21d8-442f-a31b-9edd7fff152d"/>
+				<text><![CDATA[Código Auxiliar]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="2" width="550" height="32" uuid="341dd753-66f9-4ae9-b5f0-141e4d1db1e6"/>
+			</rectangle>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="33" splitType="Stretch">
+			<textField pattern="###0.00" isBlankWhenNull="true">
+				<reportElement x="5" y="0" width="85" height="20" uuid="03e82563-39d0-47c8-be97-1caecd7a9be4"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{qtydelivered}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="100" y="0" width="259" height="20" uuid="fe30d3e2-8bf6-48eb-b2c0-9acbdb9d4691"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="362" y="0" width="100" height="20" uuid="98cb82aa-d1d8-41e3-bd48-577722483598"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productvalue}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="464" y="0" width="86" height="20" uuid="b5fcb28f-1e32-4aee-9ec0-6b7436c3252a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{productvalue}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="0" width="550" height="32" uuid="2424e840-8b27-4b7b-8207-1e1f5744f3a6"/>
+			</rectangle>
+		</band>
+	</detail>
+</jasperReport>

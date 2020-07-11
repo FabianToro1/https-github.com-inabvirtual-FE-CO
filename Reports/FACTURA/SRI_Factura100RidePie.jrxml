@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SRI_Factura100RidePie" pageWidth="572" pageHeight="752" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="963a3072-aa34-4fec-8358-f7976982ffe1">
+	<property name="ireport.zoom" value="3.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="C_Invoice_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="importetotal" class="java.math.BigDecimal" isForPrompting="false"/>
+	<parameter name="totalsinimpuestos" class="java.math.BigDecimal" isForPrompting="false"/>
+	<queryString>
+		<![CDATA[SELECT
+ COALESCE(t.LEC_TaxTypeSRI, '0') AS codigo
+ , CASE
+     WHEN t.LEC_TaxTypeSRI = '2' THEN
+       CASE
+         WHEN t.rate = 0::numeric THEN '0'
+         WHEN t.rate = 12::numeric THEN '2'
+         WHEN t.rate = 14::numeric THEN '2'
+         ELSE '6'
+       END
+     WHEN t.LEC_TaxTypeSRI = '3' THEN
+       '0000'
+     ELSE '0'
+   END AS codigoPorcentaje
+ , COALESCE(round(t.rate,2),0) AS tarifa
+ , COALESCE(SUM(it.TaxBaseAmt),0) AS Imponible
+ , COALESCE(SUM(it.TaxAmt),0) AS valor
+
+FROM C_Invoice i
+ LEFT JOIN C_InvoiceTax it ON it.C_Invoice_ID = i.C_Invoice_ID
+ LEFT JOIN C_Tax t ON t.C_Tax_ID = it.C_Tax_ID
+WHERE i.C_Invoice_ID = $P{C_Invoice_ID}
+GROUP BY codigo, codigoPorcentaje, tarifa
+ORDER BY codigo, codigoPorcentaje]]>
+	</queryString>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="codigoporcentaje" class="java.lang.String"/>
+	<field name="tarifa" class="java.math.BigDecimal"/>
+	<field name="imponible" class="java.math.BigDecimal"/>
+	<field name="valor" class="java.math.BigDecimal"/>
+	<variable name="descuento" class="java.math.BigDecimal" resetType="None">
+		<variableExpression><![CDATA[new BigDecimal(0)]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<variable name="propina" class="java.math.BigDecimal">
+		<variableExpression><![CDATA[new BigDecimal(0)]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="136" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="0" y="1" width="245" height="134" uuid="b3e0052b-e030-4aec-89cd-b1ec1dcd25ce"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="3" y="61" width="154" height="15" uuid="a152bc1e-0ff8-44dc-b6fd-1f477be268eb"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[DESCUENTO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="31" width="154" height="15" uuid="f972aa47-28b8-4d13-ab00-93c81d14a0a5"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL NO SUJETO DE IVA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="16" width="154" height="15" uuid="b903ebce-ccad-4e4f-b7af-90f45a9c99fc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL 0%]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="121" width="154" height="15" uuid="d75511f7-9fbf-43b5-bd8b-7df4579f71f3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[VALOR TOTAL]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="106" width="154" height="15" uuid="48703d04-0594-4a33-b79d-d410b5a727c3"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[PROPINA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="76" width="154" height="15" uuid="c6cbe6c3-5102-41b7-b59c-c5f48068badf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[ICE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="46" width="154" height="15" uuid="cb4ac915-a37d-4ac0-9280-b7cde98088b8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[SUBTOTAL SIN IMPUESTOS]]></text>
+			</staticText>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="2" width="86" height="15" uuid="b8909d81-105b-468f-b189-3f7518bfaccf">
+					<printWhenExpression><![CDATA[$F{codigo}.equals( "2") && $F{codigoporcentaje}.equals( "2")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{imponible}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="16" width="86" height="15" uuid="a21326c2-0751-42d1-acfe-50c0c1029902">
+					<printWhenExpression><![CDATA[$F{codigo}.equals("2") && $F{codigoporcentaje}.equals( "0")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}.equals("2") && $F{codigoporcentaje}.equals("0") ? $F{imponible} : new BigDecimal(0)]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="31" width="86" height="15" uuid="e0f31b95-9473-4d97-9cc7-44b9d4c51455">
+					<printWhenExpression><![CDATA[$F{codigo}.equals( "2") && $F{codigoporcentaje}.equals( "6")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{imponible}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="61" width="86" height="15" uuid="3d4f30f7-d5de-48c6-aa56-b522f0c418e1"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{descuento}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="106" width="86" height="15" uuid="17ce06b6-e03d-4492-9414-1116bcc8cb2a"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{propina}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="76" width="86" height="15" uuid="eb9bbe4a-e6c2-45fa-8433-ba0aa79db01c">
+					<printWhenExpression><![CDATA[$F{codigo}.equals( "3")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigo}.equals("3") ? $F{valor} : new BigDecimal(0)]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="91" width="86" height="15" uuid="222c5680-7b9c-4304-9e49-e286c2b4ca81">
+					<printWhenExpression><![CDATA[$F{codigo}.equals( "2") && $F{codigoporcentaje}.equals( "2")]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{valor}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="121" width="86" height="15" uuid="95bb6aff-b1e8-42b1-b184-d265f05da967"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{importetotal}]]></textFieldExpression>
+			</textField>
+			<textField pattern="###0.00;-###0.00" isBlankWhenNull="true">
+				<reportElement x="156" y="46" width="86" height="15" uuid="455a469c-6461-48bc-aa40-f47db253df52"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{totalsinimpuestos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="1" width="153" height="15" uuid="bfe4ea28-7066-4fec-a6d7-4b9172cb6a61"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["SUBTOTAL "+$F{tarifa}+" %"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="91" width="153" height="15" uuid="a949b1dc-1874-4c11-b0c5-f28381c25236"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["IVA "+$F{tarifa}+" %"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

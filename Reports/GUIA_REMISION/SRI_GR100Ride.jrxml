@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SRI_GR100Ride" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="05c2dae5-3c43-4032-a8a9-b224ea6393f1">
+	<property name="ireport.zoom" value="1.3310000000000006"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="453"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[/* On Development */
+/* "C:\\Temp\\JasperReports\\" */
+/* On Production */
+/*System.getProperty("java.io.tmpdir") + System.getProperty("file.separator")*/
+""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RECORD_ID" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[0]]></defaultValueExpression>
+	</parameter>
+	<parameter name="RESOURCE_DIR" class="java.lang.String">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT
+ (SELECT binarydata FROM AD_Image im WHERE im.AD_Image_ID = oi.Logo_ID) AS Logo_ID
+ ,(SELECT (coalesce(loc.address1,'')|| ', ' ||coalesce(loc.address2,'')||''||coalesce(loc.city,'')|| ' '||coalesce(loc.regionname,'')) FROM c_location loc JOIN m_warehouse w on w.c_location_id = loc.c_location_id where w.m_warehouse_id=i.m_warehouse_id) AS al_address
+ , (SELECT (coalesce(lbp.address1,'')|| ' '||coalesce(lbp.address2,'')||''||coalesce(lbp.city,'')|| ' '||coalesce(lbp.regionname,'')) FROM c_location lbp JOIN C_BPartner_Location bplo ON bplo.c_location_ID = lbp.C_location_ID WHERE bplo.c_bpartner_location_id=i.c_bpartner_location_id and bplo.C_bpartner_ID=i.c_Bpartner_ID) AS bpaddress
+, (Select Documentno FROM C_Invoice inv WHERE inv.c_order_id = i.c_order_id AND inv.C_Invoice_ID = (Select Distinct invl.C_Invoice_ID From C_InvoiceLine invl WHERE invl.M_InOutLine_ID IN (Select iol.M_InOutLine_ID  From M_InOutLine iol where iol.M_InOut_ID = i.M_InOut_ID))) AS docinvoice
+ , (Select to_char(dateinvoiced,'DD/MM/YYYY'::text) FROM C_Invoice inv WHERE inv.c_order_id = i.c_order_id AND inv.C_Invoice_ID = (Select Distinct invl.C_Invoice_ID From C_InvoiceLine invl WHERE invl.M_InOutLine_ID IN (Select iol.M_InOutLine_ID  From M_InOutLine iol where iol.M_InOut_ID = i.M_InOut_ID))) AS fecinvoice
+ , (select upper(rl_trl.name) from ad_ref_list_trl rl_trl join ad_ref_list rl ON rl.ad_ref_list_id = rl_trl.ad_ref_list_id join ad_reference r on r.ad_reference_id = rl.ad_reference_id and r.name = 'SRI_EnvType' and rl.value = ac.envtype) AS ambiente
+ , (select upper(rl_trl.name)
+from ad_ref_list_trl rl_trl
+join ad_ref_list rl ON rl.ad_ref_list_id = rl_trl.ad_ref_list_id
+join ad_reference r on r.ad_reference_id = rl.ad_reference_id
+and r.name = 'SRI_DeliveredType' and rl.value = ac.codeaccesstype) AS tipoEmision
+ , bpo.name AS razonSocial
+ , bpo.name2 AS nombreComercial
+ , oi.taxid AS ruc
+ , a.value AS claveAcceso
+ , a.SRI_AuthorizationCode AS codigoAutorizacion
+ , a.SRI_AuthorizationDate AS fechaAutorizacion
+ , i.documentno
+ , dt.SRI_ShortDocType AS codDoc
+ , oi.SRI_OrgCode AS estab
+ , substring(i.documentno,5,3) AS ptoEmi
+ , substring(i.documentno from position('-' in i.documentno)+5)::numeric AS secuencial
+, (lm.address1 ||' '|| COALESCE(lm.address2,' ')) AS dirMatriz
+ , oi.SRI_OrgCode || substring(i.documentno,5,3) AS serie
+ , substring(i.documentno from position('-' in i.documentno)+5)::numeric AS numero
+ , oi.SRI_DocumentCode AS codigo
+ , substring(a.value from 49)::numeric AS digito
+ , oi.SRI_TaxPayerCode AS contribuyenteEspecial
+ , CASE WHEN oi.SRI_IsKeepAccounting = 'Y' THEN 'SI' ELSE 'NO' END AS obligadoContabilidad
+ , CASE
+     WHEN tt.LEC_TaxCodeSRI = '1' THEN '04'
+     WHEN tt.LEC_TaxCodeSRI = '2' THEN '05'
+     WHEN tt.LEC_TaxCodeSRI = '3' THEN '06'
+     ELSE '07'
+   END AS tipoIdentificacionComprador
+ , bp.name AS razonSocialComprador
+ , bp.taxid AS identificacionComprador
+, to_char(i.shipdate, 'DD/MM/YYYY'::text) AS shipdate
+, to_char(i.shipdatee, 'DD/MM/YYYY'::text) AS shipdatee
+, ' ' AS placa
+, ms.c_bpartner_ID as mspb
+, msbp.name AS transportista
+, msbp.taxid AS ructransportista
+, (lo.address1||' '||coalesce(lo.address2,' ')) AS dirEstablecimiento
+,i.poreference AS referencia
+, (Select u.email from ad_user u where u.AD_User_ID = i.AD_User_ID) as email
+, bpl.phone as telefonocliente
+, (select rl_trl.name
+from ad_ref_list_trl rl_trl
+join ad_ref_list rl ON rl.ad_ref_list_id = rl_trl.ad_ref_list_id
+join ad_reference r on r.ad_reference_id = rl.ad_reference_id
+and r.name = 'Shipment Reason' and rl.value = i.Shipment_Reason) AS Shipment_reason
+ FROM M_InOut i
+ JOIN AD_ClientInfo ci ON ci.AD_Client_ID = i.AD_Client_ID
+ JOIN AD_OrgInfo oi ON oi.AD_Org_ID = i.AD_Org_ID
+ JOIN C_DocType dt ON dt.C_DocType_ID = i.C_DocType_ID
+ JOIN C_BPartner bpo ON bpo.AD_Client_ID = oi.AD_Client_ID AND bpo.TaxId = oi.TaxId AND bpo.IsActive='Y'
+ LEFT JOIN C_Location lm ON lm.C_Location_ID = (SELECT Value::numeric FROM AD_SysConfig sc WHERE sc.AD_Client_ID=i.AD_Client_ID AND sc.Name='QSSLEC_FE_LocalizacionDireccionMatriz')
+ JOIN C_BPartner bp ON bp.C_BPartner_ID = i.C_BPartner_ID
+ JOIN C_Location lo ON lo.C_Location_ID = oi.C_Location_ID
+ JOIN C_BPartner_Location bpl ON bpl.C_BPartner_Location_ID = i.C_BPartner_Location_ID
+ JOIN C_Location l ON l.C_Location_ID = bpl.C_Location_ID
+ JOIN LCO_TaxIdType tt ON tt.LCO_TaxIdType_ID = bp.LCO_TaxIdType_ID
+ LEFT JOIN SRI_Authorization a ON a.SRI_Authorization_ID = i.SRI_Authorization_ID
+ LEFT JOIN SRI_AccessCode ac ON ac.SRI_AccessCode_ID = a.SRI_AccessCode_ID
+ LEFT JOIN M_Shipper ms ON i.M_Shipper_ID = ms.M_Shipper_ID
+ LEFT JOIN C_BPartner msbp ON ms.c_bpartner_ID = msbp.C_BPartner_ID
+ WHERE i.M_InOut_ID = $P{RECORD_ID}]]>
+	</queryString>
+	<field name="logo_id" class="java.lang.Object"/>
+	<field name="al_address" class="java.lang.String"/>
+	<field name="bpaddress" class="java.lang.String"/>
+	<field name="docinvoice" class="java.lang.String"/>
+	<field name="fecinvoice" class="java.lang.String"/>
+	<field name="ambiente" class="java.lang.String"/>
+	<field name="tipoemision" class="java.lang.String"/>
+	<field name="razonsocial" class="java.lang.String"/>
+	<field name="nombrecomercial" class="java.lang.String"/>
+	<field name="ruc" class="java.lang.String"/>
+	<field name="claveacceso" class="java.lang.String"/>
+	<field name="codigoautorizacion" class="java.lang.String"/>
+	<field name="fechaautorizacion" class="java.sql.Timestamp"/>
+	<field name="documentno" class="java.lang.String"/>
+	<field name="coddoc" class="java.lang.String"/>
+	<field name="estab" class="java.lang.String"/>
+	<field name="ptoemi" class="java.lang.String"/>
+	<field name="secuencial" class="java.math.BigDecimal"/>
+	<field name="dirmatriz" class="java.lang.String"/>
+	<field name="serie" class="java.lang.String"/>
+	<field name="numero" class="java.math.BigDecimal"/>
+	<field name="codigo" class="java.lang.String"/>
+	<field name="digito" class="java.math.BigDecimal"/>
+	<field name="contribuyenteespecial" class="java.lang.String"/>
+	<field name="obligadocontabilidad" class="java.lang.String"/>
+	<field name="tipoidentificacioncomprador" class="java.lang.String"/>
+	<field name="razonsocialcomprador" class="java.lang.String"/>
+	<field name="identificacioncomprador" class="java.lang.String"/>
+	<field name="shipdate" class="java.lang.String"/>
+	<field name="shipdatee" class="java.lang.String"/>
+	<field name="placa" class="java.lang.String"/>
+	<field name="mspb" class="java.math.BigDecimal"/>
+	<field name="transportista" class="java.lang.String"/>
+	<field name="ructransportista" class="java.lang.String"/>
+	<field name="direstablecimiento" class="java.lang.String"/>
+	<field name="referencia" class="java.lang.String"/>
+	<field name="email" class="java.lang.String"/>
+	<field name="telefonocliente" class="java.lang.String"/>
+	<field name="shipment_reason" class="java.lang.String"/>
+	<background>
+		<band height="463" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Transparent" x="130" y="182" width="305" height="244" forecolor="#CCCCCC" uuid="f0107881-c423-48fd-9031-a9748d3c6014">
+					<printWhenExpression><![CDATA[$F{ambiente}.equals( "TEST" )]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left">
+					<font size="36" isStrikeThrough="false"/>
+				</textElement>
+				<text><![CDATA[SIN VALIDEZ TRIBUTARIA]]></text>
+			</staticText>
+		</band>
+	</background>
+	<pageHeader>
+		<band height="529" splitType="Stretch">
+			<rectangle>
+				<reportElement mode="Transparent" x="10" y="257" width="550" height="135" uuid="c0d1047a-e158-4b8c-98d1-491376fd0300"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="58" width="180" height="20" uuid="fdb42c6b-258e-4d9f-8936-6499719fb8f1"/>
+				<textFieldExpression><![CDATA["No. " + $F{documentno}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="78" width="180" height="20" uuid="c16e5121-ac05-48c4-b2ee-802de3c96bc2"/>
+				<text><![CDATA[NÚMERO DE AUTORIZACIÓN]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="98" width="228" height="20" uuid="e7413ace-d010-4691-aac3-e04f5a678a3a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoautorizacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="118" width="103" height="20" uuid="36cb9475-5fdf-4737-b0fa-2c5e7c123f3f"/>
+				<textElement>
+					<font size="6"/>
+				</textElement>
+				<text><![CDATA[FECHA Y HORA DE AUTORIZACIÓN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="138" width="60" height="20" uuid="2bd10670-4c94-4403-8b18-c0d6af2199ff"/>
+				<text><![CDATA[AMBIENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="332" y="178" width="210" height="20" uuid="34f3228e-5e24-4227-9519-40ec9cae955e"/>
+				<text><![CDATA[CLAVE DE ACCESO]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="402" y="138" width="110" height="20" uuid="03b9e420-1c15-4555-99bd-022b748bef3b"/>
+				<textFieldExpression><![CDATA[$F{ambiente}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="158" width="210" height="20" uuid="1d618316-b0ff-4f57-a8e1-36fbde9b8e2d"/>
+				<textFieldExpression><![CDATA[$F{tipoemision}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="173" width="61" height="20" uuid="01cbbd17-4206-40b6-9a12-5133db37704e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Dir. Matriz:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="27" y="193" width="61" height="20" uuid="81853336-d7b5-4ce0-bf19-fcd91234f1bc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Dir. Sucursal:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="88" y="173" width="217" height="20" uuid="65d729cf-4fc7-4219-a0d4-ec9862e2494f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dirmatriz}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="88" y="193" width="217" height="20" uuid="c5fab68e-a712-4894-b291-b854cb882ea0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{direstablecimiento}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="27" y="149" width="278" height="24" uuid="8cad1abc-92b6-4e34-8e50-53276d6087c9"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{razonsocial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="213" width="133" height="20" uuid="b651a035-5795-425c-8e2d-82789240f38f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Contribuyente Especial No.]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="213" width="80" height="20" uuid="f89f42c2-edfe-43d3-a537-38726ca397cb"/>
+				<textFieldExpression><![CDATA[$F{contribuyenteespecial}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="27" y="233" width="185" height="20" uuid="affa890f-ce85-4b55-96f1-a6b102bf6cdc"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[OBLIGADO A LLEVAR CONTABILIDAD]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="229" y="233" width="29" height="20" uuid="ed71ebea-9826-4cb2-8199-45075789e4cb"/>
+				<textFieldExpression><![CDATA[$F{obligadocontabilidad}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="285" width="133" height="20" uuid="939d2d9c-e401-4de1-8167-7ff7ef5ced42"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Razon Social / Nombres y Apellidos]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="262" width="170" height="20" uuid="739a6808-9563-47c8-9b36-58b09246f085"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ructransportista}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="285" width="334" height="34" uuid="43cae5a4-bb94-4f3a-bb6f-62c44f7f25d3"/>
+				<textFieldExpression><![CDATA[$F{transportista}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="true">
+				<reportElement x="441" y="118" width="117" height="20" uuid="84d824d0-aff7-4b81-aac7-82139398c900"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaautorizacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="332" y="18" width="34" height="20" uuid="e3360f1f-6c88-48b3-9f2a-80bdd77f13be"/>
+				<text><![CDATA[R.U.C:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="369" y="18" width="110" height="20" uuid="30ba2487-d356-4eea-948a-b27b163753a8"/>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="10" y="149" width="320" height="104" uuid="428d2c1f-f903-41e5-8751-eae79175accc"/>
+			</rectangle>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="38" width="180" height="20" uuid="d0e3e4c6-2305-40fe-8670-25046836bce7"/>
+				<textFieldExpression><![CDATA[$F{coddoc}.equals("04") ? "NOTA DE CREDITO" : $F{coddoc}.equals("06") ? "GUIA DE REMISIÓN" : "TIPO NO VALIDO " + $F{coddoc}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="211" y="395" width="179" height="12" uuid="41604df5-9a32-4f67-bda1-6e06b4916453"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{docinvoice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="395" width="133" height="12" uuid="fce054bb-b4a8-485a-b17e-616c74d2ef5a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Comprobante de Venta:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="148" y="395" width="63" height="12" uuid="d66a488f-6067-4a3c-a0a1-c5a33dc2f4aa"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[FACTURA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="394" width="89" height="20" uuid="c2af65f2-3eba-4cbf-8254-fe767edd6c9f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha de emisión]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="479" y="394" width="78" height="20" uuid="5b4b88b9-6d03-4ef1-8e96-5ebbad031fcf"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecinvoice}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="441" width="96" height="20" uuid="572c5da0-ee2f-403c-a8af-997d653da7d6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Motivo Traslado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="262" width="151" height="20" uuid="246a8613-0752-4b2d-ac88-b08855471af2"/>
+				<text><![CDATA[Identificación (Transportista)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="319" width="151" height="20" uuid="110051ad-f07c-4a1a-8525-9a33b2d95f4f"/>
+				<text><![CDATA[Placa:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="319" width="133" height="20" uuid="87b0ff4c-a9d7-47e4-92d9-e7554facb6e9"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="343" width="151" height="20" uuid="7fa28882-188f-4571-89d7-82322ee58799"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Punto de Partida:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="343" width="344" height="20" uuid="62c7cad6-e56e-459d-abb2-efa92ec69a35"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{al_address}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="367" width="151" height="20" uuid="cec2b2f2-0315-4d1e-bd3b-c9315b1dad73"/>
+				<text><![CDATA[Fecha Inicio Transporte]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="208" y="367" width="78" height="20" uuid="19c8b7ca-32d7-4276-861d-e94e27a2c84b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shipdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="299" y="366" width="151" height="20" uuid="0922b48b-8b23-4b9e-93b1-949497e02356"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Fecha Fin Transporte]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="471" y="367" width="78" height="20" uuid="c7b07360-c04d-40cf-9137-8745e71a5716"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shipdatee}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement mode="Transparent" x="11" y="393" width="550" height="133" uuid="66a31a1e-8351-4992-966c-bac5adfdbb91"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="15" y="425" width="151" height="12" uuid="975f8ce7-4aab-41ab-b529-7905652418c8"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Número de autorización:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="15" y="461" width="145" height="20" uuid="ea13d210-25e2-45f6-bd87-2e726ec891e7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Dirección (Punto de llegada)]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="461" width="382" height="20" uuid="53d3d789-b6ab-41e9-9195-7fdd321443d6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{bpaddress}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="483" width="145" height="20" uuid="30c96925-0650-4ee9-aa21-9c0416379c2a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Identificación destinatario]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="481" width="214" height="20" uuid="3a1fd984-53dc-4acf-b358-dc9308763cfe"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{identificacioncomprador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="15" y="506" width="152" height="20" uuid="595d4330-e283-4fc1-b8a1-6590db817782"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Razon Social / Nombres y Apellidos]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="173" y="503" width="379" height="20" uuid="c3bbc402-13fb-4a9b-be65-c56850a381d7"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{razonsocialcomprador}]]></textFieldExpression>
+			</textField>
+			<image scaleImage="FillFrame" hAlign="Left" isUsingCache="false" onErrorType="Blank">
+				<reportElement mode="Transparent" x="88" y="18" width="130" height="120" forecolor="#FFFFFF" backcolor="#000000" uuid="715461f6-ee2b-44d8-9a9f-406fc110c6d3"/>
+				<imageExpression><![CDATA[$P{RESOURCE_DIR} + "Logo.jpg"]]></imageExpression>
+			</image>
+			<componentElement>
+				<reportElement x="332" y="203" width="167" height="30" uuid="139bd930-cbe0-488c-87f2-74c0b4604162"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="EAN128" drawText="true" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$F{claveacceso}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<rectangle radius="10">
+				<reportElement mode="Transparent" x="330" y="14" width="231" height="239" uuid="5f3a5e00-29b1-4618-b205-0d00c6aec632"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="16" y="410" width="132" height="12" uuid="0341bd71-7b56-4248-a42f-3c93aaedda24"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Referencia:]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="178" y="410" width="371" height="12" uuid="02c33b08-6442-4935-9409-ba97ebd35f3e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{referencia}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="332" y="233" width="240" height="20" uuid="7a3bb5dd-23ad-4f2b-8ebc-41d543e3ffd0"/>
+				<textElement>
+					<font size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{claveacceso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="178" y="441" width="200" height="20" uuid="4f7eec2e-2454-48e7-b3ce-06cfea20c9f2"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shipment_reason}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="3" splitType="Stretch">
+			<subreport>
+				<reportElement x="12" y="0" width="545" height="0" uuid="8b007b3f-b926-4d0d-844a-353f8b8a3005"/>
+				<subreportParameter name="M_InOut_ID">
+					<subreportParameterExpression><![CDATA[$P{RECORD_ID}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "SRI_GR100RideDet.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band/>
+	</pageFooter>
+	<summary>
+		<band height="71" splitType="Prevent">
+			<textField>
+				<reportElement x="479" y="8" width="38" height="15" uuid="f45ec791-5dde-497f-aaf9-d1b94feed684"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pág. "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="517" y="8" width="40" height="15" uuid="281a0655-7115-410d-899e-1f19dfaeb26a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="99" y="56" width="73" height="12" uuid="3a210175-359e-4954-865c-a37e65a2bcaf"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Email]]></text>
+			</staticText>
+			<textField isBlankWhenNull="true">
+				<reportElement x="173" y="56" width="216" height="12" uuid="be37da4c-a2ea-44fb-b21d-1d2a00d7f135"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{email}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="173" y="42" width="216" height="12" uuid="7a351e35-50cc-4651-a43e-f12ccca57eda"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{telefonocliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="97" y="3" width="148" height="15" uuid="06a399b3-1763-4222-81a9-df544f07eeb0"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Información Adicional]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="97" y="3" width="295" height="65" uuid="aed0876c-0f16-4f12-85d2-f180df70c5ed"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="99" y="28" width="73" height="12" uuid="66b2a685-3358-45b8-97fe-74a86267165b"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="99" y="42" width="73" height="12" uuid="c081e0ba-c1b7-4317-a9d5-7553c457ea9d"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Teléfono]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

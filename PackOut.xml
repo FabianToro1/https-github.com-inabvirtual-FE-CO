@@ -1,0 +1,2296 @@
+<?xml version="1.0" encoding="UTF-8"?><idempiere Name="2Pack_5.1.5" Version="5.1.5" idempiereVersion="" DataBaseVersion="" Description="" Author="" AuthorEmail="orlando.curieles@ingeint.com" CreatedDate="2018-08-13 16:16:29.809" UpdatedDate="2018-08-13 16:17:38.475" PackOutVersion="100" UpdateDictionary="false" Client="0-SYSTEM-System" AD_Client_UU="11237b53-9592-4af1-b3c5-afd216514b5d">
+    <AD_Menu type="table">
+        <Parent_ID reference="id">53109</Parent_ID>
+        <SeqNo>2</SeqNo>
+        <AD_Menu_ID>53113</AD_Menu_ID>
+        <AD_Client_ID>0</AD_Client_ID>
+        <AD_Org_ID>0</AD_Org_ID>
+        <AD_Menu_ID>53113</AD_Menu_ID>
+        <Name>Payroll Job</Name>
+        <Description>Maintain Payroll Job</Description>
+        <Action>W</Action>
+        <AD_Window_ID reference="id">53035</AD_Window_ID>
+        <AD_Workflow_ID reference="id"/>
+        <AD_Task_ID reference="id"/>
+        <IsActive>Y</IsActive>
+        <IsSummary>N</IsSummary>
+        <AD_Process_ID reference="id"/>
+        <IsSOTrx>N</IsSOTrx>
+        <AD_Form_ID reference="id"/>
+        <IsReadOnly>N</IsReadOnly>
+        <EntityType>EE02</EntityType>
+        <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+        <AD_Menu_UU>14439b22-e33f-47ff-b866-8085aca42a77</AD_Menu_UU>
+        <AD_InfoWindow_ID reference="id"/>
+        <AD_Menu_Trl type="translation">
+            <Name>Puesto Nómina</Name>
+            <Description>Mantenimiento de puestos de nómina</Description>
+            <AD_Language>es_EC</AD_Language>
+            <IsActive>Y</IsActive>
+            <IsTranslated>Y</IsTranslated>
+        </AD_Menu_Trl>
+        <AD_Table type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>HT_JobEndowment</Name>
+            <Description/>
+            <Help/>
+            <AD_Window_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <TableName>HT_JobEndowment</TableName>
+            <LoadSeq>0</LoadSeq>
+            <AccessLevel>3</AccessLevel>
+            <IsActive>Y</IsActive>
+            <IsSecurityEnabled>N</IsSecurityEnabled>
+            <IsDeleteable>Y</IsDeleteable>
+            <IsHighVolume>N</IsHighVolume>
+            <IsView>N</IsView>
+            <EntityType>ING_Payroll</EntityType>
+            <ImportTable>N</ImportTable>
+            <IsChangeLog>Y</IsChangeLog>
+            <ReplicationType>L</ReplicationType>
+            <PO_Window_ID reference="id"/>
+            <CopyColumnsFromTable>N</CopyColumnsFromTable>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_Table_UU>880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_UU>
+            <Processing>N</Processing>
+            <DatabaseViewDrop>N</DatabaseViewDrop>
+            <CopyComponentsFromView>N</CopyComponentsFromView>
+            <AD_Element type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <IsActive>Y</IsActive>
+                <ColumnName>HT_JobEndowment_ID</ColumnName>
+                <Name>HT_JobEndowment</Name>
+                <Description/>
+                <Help/>
+                <PrintName>HT_JobEndowment</PrintName>
+                <PO_Description/>
+                <PO_Help/>
+                <PO_Name/>
+                <PO_PrintName/>
+                <EntityType>ING_Payroll</EntityType>
+                <AD_Element_UU>b34e119c-506b-49f4-a10c-b4761becce79</AD_Element_UU>
+                <AD_Element_Trl type="translation">
+                    <Help/>
+                    <PO_Description/>
+                    <PO_Help/>
+                    <Name>Dotación por cargo</Name>
+                    <Description/>
+                    <PrintName>Dotación por cargo</PrintName>
+                    <PO_Name/>
+                    <PO_PrintName/>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Element_Trl>
+            </AD_Element>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>HT_JobEndowment</Name>
+                <Description/>
+                <Help/>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>HT_JobEndowment_ID</ColumnName>
+                <DefaultValue/>
+                <FieldLength>10</FieldLength>
+                <IsKey>Y</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">13</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="uuid" reference-key="AD_Element">b34e119c-506b-49f4-a10c-b4761becce79</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>6e8be536-c402-49a3-812f-107113e44427</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Client</Name>
+                <Description>Client/Tenant for this installation.</Description>
+                <Help>A Client is a company or a legal entity. You cannot share data between Clients. Tenant is a synonym for Client.</Help>
+                <AD_Val_Rule_ID reference="id">129</AD_Val_Rule_ID>
+                <ColumnName>AD_Client_ID</ColumnName>
+                <DefaultValue>@#AD_Client_ID@</DefaultValue>
+                <FieldLength>10</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">19</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">102</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>c0db34f5-82ad-4b0f-a2f9-47513a72561f</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>D</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Organization</Name>
+                <Description>Organizational entity within client</Description>
+                <Help>An organization is a unit of your client or legal entity - examples are store, department. You can share data between organizations.</Help>
+                <AD_Val_Rule_ID reference="id">104</AD_Val_Rule_ID>
+                <ColumnName>AD_Org_ID</ColumnName>
+                <DefaultValue>@#AD_Org_ID@</DefaultValue>
+                <FieldLength>10</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">19</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">113</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>8857df24-91d2-4112-93d1-8fd6f12df842</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>D</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Element type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <IsActive>Y</IsActive>
+                <ColumnName>HT_JobEndowment_UU</ColumnName>
+                <Name>HT_JobEndowment_UU</Name>
+                <Description/>
+                <Help/>
+                <PrintName>HT_JobEndowment_UU</PrintName>
+                <PO_Description/>
+                <PO_Help/>
+                <PO_Name/>
+                <PO_PrintName/>
+                <EntityType>ING_Payroll</EntityType>
+                <AD_Element_UU>85209192-a043-4092-8102-ebafe7212791</AD_Element_UU>
+                <AD_Element_Trl type="translation">
+                    <Help/>
+                    <PO_Description/>
+                    <PO_Help/>
+                    <Name>HT_JobEndowment_UU</Name>
+                    <Description/>
+                    <PrintName>HT_JobEndowment_UU</PrintName>
+                    <PO_Name/>
+                    <PO_PrintName/>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>N</IsTranslated>
+                </AD_Element_Trl>
+            </AD_Element>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>1.00</Version>
+                <Name>HT_JobEndowment_UU</Name>
+                <Description/>
+                <Help/>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>HT_JobEndowment_UU</ColumnName>
+                <DefaultValue/>
+                <FieldLength>36</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>N</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">10</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="uuid" reference-key="AD_Element">85209192-a043-4092-8102-ebafe7212791</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>7e926ec9-70c0-4298-878c-12ec377a3b03</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Created</Name>
+                <Description>Date this record was created</Description>
+                <Help>The Created field indicates the date that this record was created.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>Created</ColumnName>
+                <DefaultValue>SYSDATE</DefaultValue>
+                <FieldLength>7</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">16</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">245</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>d3de149f-0bf8-476a-8f8f-22099400e278</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id">110</AD_Reference_Value_ID>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Created By</Name>
+                <Description>User who created this records</Description>
+                <Help>The Created By field indicates the user who created this record.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>CreatedBy</ColumnName>
+                <DefaultValue/>
+                <FieldLength>10</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">18</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">246</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>3d810f4a-c582-4358-a8e0-6697093b1846</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>D</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Comment/Help</Name>
+                <Description>Comment or Hint</Description>
+                <Help>The Help field contains a hint, comment or help about the use of this item.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>Help</ColumnName>
+                <DefaultValue/>
+                <FieldLength>2000</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>N</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">14</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">326</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>83661972-84a7-4d49-9fc3-1efc33b2280c</AD_Column_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Active</Name>
+                <Description>The record is active in the system</Description>
+                <Help>There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.
+There are two reasons for de-activating and not deleting records:
+(1) The system requires the record for audit purposes.
+(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>IsActive</ColumnName>
+                <DefaultValue>Y</DefaultValue>
+                <FieldLength>1</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">20</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">348</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>4654682a-ea1c-4f1d-aebc-d8fa3305f370</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Employee</Name>
+                <Description>Indicates if  this Business Partner is an employee</Description>
+                <Help>The Employee checkbox indicates if this Business Partner is an Employee.  If it is selected, additional fields will display which further identify this employee.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>IsEmployee</ColumnName>
+                <DefaultValue>Y</DefaultValue>
+                <FieldLength>1</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">20</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">373</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>3ef1ca90-2738-4252-9c8b-204688508030</AD_Column_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Updated</Name>
+                <Description>Date this record was updated</Description>
+                <Help>The Updated field indicates the date that this record was updated.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>Updated</ColumnName>
+                <DefaultValue>SYSDATE</DefaultValue>
+                <FieldLength>7</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">16</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">607</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>90a643fd-efea-4539-b6c7-b63a53cd82c8</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id">110</AD_Reference_Value_ID>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Updated By</Name>
+                <Description>User who updated this records</Description>
+                <Help>The Updated By field indicates the user who updated this record.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>UpdatedBy</ColumnName>
+                <DefaultValue/>
+                <FieldLength>10</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>Y</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo/>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">18</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">608</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>a4ba9c83-b849-4a8c-8e14-163b55e39b39</AD_Column_UU>
+                <IsAllowCopy>N</IsAllowCopy>
+                <SeqNoSelection/>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>D</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Article of Endowment</Name>
+                <Description/>
+                <Help/>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>HT_ArticleOfEndowment_ID</ColumnName>
+                <DefaultValue/>
+                <FieldLength>22</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>N</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo>0</SeqNo>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">19</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="uuid" reference-key="AD_Element">4f1d934e-493b-44dd-b102-4a9717c4c552</AD_Element_ID>
+                <IsUpdateable>N</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>8edc5130-3f23-4a82-bc9e-2ae91e265d39</AD_Column_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <SeqNoSelection>0</SeqNoSelection>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName>HTArticleOfEndowment_HTJobEndo</FKConstraintName>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Payroll Job</Name>
+                <Description/>
+                <Help/>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>HR_Job_ID</ColumnName>
+                <DefaultValue/>
+                <FieldLength>10</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>N</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo>0</SeqNo>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">19</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">53392</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>a4a7d3d5-3ada-4494-a273-35a0af134875</AD_Column_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <SeqNoSelection>0</SeqNoSelection>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName>HRJob_HTJobEndowment</FKConstraintName>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Date Delivered</Name>
+                <Description>Date when the product was delivered</Description>
+                <Help/>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>DateDelivered</ColumnName>
+                <DefaultValue/>
+                <FieldLength>29</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>N</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo>0</SeqNo>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">16</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">264</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>60b7a42e-ce90-4725-9d11-684b800247dd</AD_Column_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <SeqNoSelection>0</SeqNoSelection>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+            <AD_Column type="table">
+                <IsSyncDatabase>Y</IsSyncDatabase>
+                <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Version>0</Version>
+                <Name>Date received</Name>
+                <Description>Date a product was received</Description>
+                <Help>The Date Received indicates the date that product was received.</Help>
+                <AD_Val_Rule_ID reference="id"/>
+                <ColumnName>DateReceived</ColumnName>
+                <DefaultValue/>
+                <FieldLength>7</FieldLength>
+                <IsKey>N</IsKey>
+                <IsParent>N</IsParent>
+                <IsMandatory>N</IsMandatory>
+                <IsTranslated>N</IsTranslated>
+                <IsIdentifier>N</IsIdentifier>
+                <SeqNo>0</SeqNo>
+                <IsEncrypted>N</IsEncrypted>
+                <AD_Reference_ID reference="id">15</AD_Reference_ID>
+                <IsActive>Y</IsActive>
+                <VFormat/>
+                <Callout/>
+                <AD_Element_ID reference="id">1324</AD_Element_ID>
+                <IsUpdateable>Y</IsUpdateable>
+                <AD_Process_ID reference="id"/>
+                <ValueMin/>
+                <ValueMax/>
+                <IsSelectionColumn>N</IsSelectionColumn>
+                <ReadOnlyLogic/>
+                <EntityType>ING_Payroll</EntityType>
+                <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+                <ColumnSQL/>
+                <MandatoryLogic/>
+                <IsAutocomplete>N</IsAutocomplete>
+                <IsAllowLogging>Y</IsAllowLogging>
+                <FormatPattern/>
+                <AD_Chart_ID reference="id"/>
+                <AD_Column_UU>6d5e56a9-d95c-4715-ab0a-a7e33f3fe32f</AD_Column_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <SeqNoSelection>0</SeqNoSelection>
+                <IsToolbarButton>N</IsToolbarButton>
+                <IsSecure>N</IsSecure>
+                <FKConstraintName/>
+                <FKConstraintType>N</FKConstraintType>
+                <PA_DashboardContent_ID reference="id"/>
+            </AD_Column>
+        </AD_Table>
+        <AD_Tab type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>Article</Name>
+            <Description/>
+            <Help/>
+            <AD_Window_ID reference="id">53035</AD_Window_ID>
+            <SeqNo>20</SeqNo>
+            <IsSingleRow>Y</IsSingleRow>
+            <AD_Table_ID reference="uuid" reference-key="AD_Table">880f6848-541d-4b88-a39d-2f15719efd02</AD_Table_ID>
+            <IsActive>Y</IsActive>
+            <HasTree>N</HasTree>
+            <IsInfoTab>N</IsInfoTab>
+            <IsTranslationTab>N</IsTranslationTab>
+            <IsReadOnly>N</IsReadOnly>
+            <AD_Column_ID reference="uuid" reference-key="AD_Column">a4a7d3d5-3ada-4494-a273-35a0af134875</AD_Column_ID>
+            <WhereClause/>
+            <OrderByClause/>
+            <CommitWarning/>
+            <AD_Process_ID reference="id"/>
+            <Processing>N</Processing>
+            <AD_Image_ID reference="id"/>
+            <ImportFields>N</ImportFields>
+            <TabLevel>1</TabLevel>
+            <IsSortTab>N</IsSortTab>
+            <AD_ColumnSortYesNo_ID reference="id"/>
+            <AD_ColumnSortOrder_ID reference="id"/>
+            <EntityType>ING_Payroll</EntityType>
+            <Included_Tab_ID reference="id"/>
+            <ReadOnlyLogic/>
+            <DisplayLogic/>
+            <IsInsertRecord>Y</IsInsertRecord>
+            <IsAdvancedTab>N</IsAdvancedTab>
+            <Parent_Column_ID reference="id"/>
+            <AD_Tab_UU>c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_UU>
+            <AD_CtxHelp_ID reference="id"/>
+            <TreeDisplayedOn>B</TreeDisplayedOn>
+            <AD_Tab_Trl type="translation">
+                <Help/>
+                <CommitWarning/>
+                <Name>Articulos de dotacion por cargo</Name>
+                <Description/>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Tab_Trl>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Employee</Name>
+                <Description>Indicates if  this Business Partner is an employee</Description>
+                <Help>The Employee checkbox indicates if this Business Partner is an Employee.  If it is selected, additional fields will display which further identify this employee.</Help>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">3ef1ca90-2738-4252-9c8b-204688508030</AD_Column_ID>
+                <IsDisplayed>N</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>1</DisplayLength>
+                <SeqNo>0</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>8250b364-3d7f-418e-ab3f-0fb8f9c360b4</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>40</SeqNoGrid>
+                <XPosition>1</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help>El cuadro de verificación empleado indica si este tercero es un empleado. Si se selecciona se desplegarán campos adicionales para identificar a este empleado.</Help>
+                    <Description>Indica si el tercero es un empleado</Description>
+                    <Name>Empleado</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>HT_JobEndowment_UU</Name>
+                <Description/>
+                <Help/>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">7e926ec9-70c0-4298-878c-12ec377a3b03</AD_Column_ID>
+                <IsDisplayed>N</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>36</DisplayLength>
+                <SeqNo>0</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>4731f30a-c46d-4005-b693-d4eeb7bb56da</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>N</IsDisplayedGrid>
+                <SeqNoGrid/>
+                <XPosition>1</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help/>
+                    <Description/>
+                    <Name>HT_JobEndowment_UU</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>N</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>HT_JobEndowment</Name>
+                <Description/>
+                <Help/>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">6e8be536-c402-49a3-812f-107113e44427</AD_Column_ID>
+                <IsDisplayed>N</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>10</DisplayLength>
+                <SeqNo>0</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>c3861a0e-25c9-411e-a280-a405745ea409</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>N</IsDisplayedGrid>
+                <SeqNoGrid/>
+                <XPosition>1</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help/>
+                    <Description/>
+                    <Name>Dotación por cargo</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Client</Name>
+                <Description>Client/Tenant for this installation.</Description>
+                <Help>A Client is a company or a legal entity. You cannot share data between Clients. Tenant is a synonym for Client.</Help>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">c0db34f5-82ad-4b0f-a2f9-47513a72561f</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>10</DisplayLength>
+                <SeqNo>10</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>829b7af3-c17a-4ae6-a518-f98c1d00dc4f</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>N</IsDisplayedGrid>
+                <SeqNoGrid/>
+                <XPosition>1</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help>Grupo Empresarial. No se pueden compartir datos entre diferentes grupos empresariales.</Help>
+                    <Description>Grupo Empresarial para esta instalación</Description>
+                    <Name>Grupo Empresarial</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Organization</Name>
+                <Description>Organizational entity within client</Description>
+                <Help>An organization is a unit of your client or legal entity - examples are store, department. You can share data between organizations.</Help>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">8857df24-91d2-4112-93d1-8fd6f12df842</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>10</DisplayLength>
+                <SeqNo>20</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue>@AD_Org_ID@</DefaultValue>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>52355c6c-3fd3-4f24-b453-8814f91c00c1</AD_Field_UU>
+                <IsAllowCopy>Y</IsAllowCopy>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>10</SeqNoGrid>
+                <XPosition>4</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help>Una organización es una unidad del grupo empresarial o entidad legal - Ej. Tiendas y departamentos. Es posible compartir datos entre organizaciones.</Help>
+                    <Description>Entidad organizacional dentro del grupo empresarial</Description>
+                    <Name>Organización</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Payroll Job</Name>
+                <Description/>
+                <Help/>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">a4a7d3d5-3ada-4494-a273-35a0af134875</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>10</DisplayLength>
+                <SeqNo>30</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>d8354e19-9b57-43c1-bcbc-60d0f81d021f</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>60</SeqNoGrid>
+                <XPosition>1</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help/>
+                    <Description/>
+                    <Name>Puesto Nómina</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Article of Endowment</Name>
+                <Description/>
+                <Help/>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">8edc5130-3f23-4a82-bc9e-2ae91e265d39</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>22</DisplayLength>
+                <SeqNo>40</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>a1ddd0cc-8b5c-4965-af61-05ed2367e8ab</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>50</SeqNoGrid>
+                <XPosition>4</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help/>
+                    <Description/>
+                    <Name>Artículo de Dotación</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>N</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Date Delivered</Name>
+                <Description>Date when the product was delivered</Description>
+                <Help/>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">60b7a42e-ce90-4725-9d11-684b800247dd</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>29</DisplayLength>
+                <SeqNo>50</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>f0849697-5ecc-4029-a33a-80060b410927</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>80</SeqNoGrid>
+                <XPosition>1</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help/>
+                    <Description>Fecha en que se realizó la última entrega de producto</Description>
+                    <Name>Fecha Entrega</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Date received</Name>
+                <Description>Date a product was received</Description>
+                <Help>The Date Received indicates the date that product was received.</Help>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">6d5e56a9-d95c-4715-ab0a-a7e33f3fe32f</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>7</DisplayLength>
+                <SeqNo>60</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>ae89c58b-d123-4322-8f45-347877ec16a3</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>90</SeqNoGrid>
+                <XPosition>4</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help>La fecha de recibo indica la fecha en que el producto fue recibido.</Help>
+                    <Description>Fecha en que un producto fue recibido.</Description>
+                    <Name>Fecha Recibo</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Comment/Help</Name>
+                <Description>Comment or Hint</Description>
+                <Help>The Help field contains a hint, comment or help about the use of this item.</Help>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">83661972-84a7-4d49-9fc3-1efc33b2280c</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>2000</DisplayLength>
+                <SeqNo>70</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>3c873acd-b10a-4bff-b0b0-3e0e5778df6e</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>20</SeqNoGrid>
+                <XPosition>1</XPosition>
+                <ColumnSpan>5</ColumnSpan>
+                <NumLines>3</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help>El campo ayuda contiene una sugerencia; comentario o ayuda acerca del uso de esta partida</Help>
+                    <Description>Ayuda; Comentario o Sugerencia</Description>
+                    <Name>Ayuda</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+            <AD_Field type="table">
+                <AD_Client_ID>0</AD_Client_ID>
+                <AD_Org_ID>0</AD_Org_ID>
+                <Name>Active</Name>
+                <Description>The record is active in the system</Description>
+                <Help>There are two methods of making records unavailable in the system: One is to delete the record, the other is to de-activate the record. A de-activated record is not available for selection, but available for reports.
+There are two reasons for de-activating and not deleting records:
+(1) The system requires the record for audit purposes.
+(2) The record is referenced by other records. E.g., you cannot delete a Business Partner, if there are invoices for this partner record existing. You de-activate the Business Partner and prevent that this record is used for future entries.</Help>
+                <AD_Tab_ID reference="uuid" reference-key="AD_Tab">c4873b91-c020-48fd-96ae-bc361302017d</AD_Tab_ID>
+                <AD_Column_ID reference="uuid" reference-key="AD_Column">4654682a-ea1c-4f1d-aebc-d8fa3305f370</AD_Column_ID>
+                <IsDisplayed>Y</IsDisplayed>
+                <DisplayLogic/>
+                <DisplayLength>1</DisplayLength>
+                <SeqNo>80</SeqNo>
+                <SortNo/>
+                <IsSameLine>N</IsSameLine>
+                <IsHeading>N</IsHeading>
+                <IsFieldOnly>N</IsFieldOnly>
+                <IsEncrypted>N</IsEncrypted>
+                <IsActive>Y</IsActive>
+                <IsReadOnly>N</IsReadOnly>
+                <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+                <AD_FieldGroup_ID reference="id"/>
+                <EntityType>ING_Payroll</EntityType>
+                <ObscureType/>
+                <AD_Reference_ID reference="id"/>
+                <IsMandatory/>
+                <DefaultValue/>
+                <AD_Reference_Value_ID reference="id"/>
+                <AD_Val_Rule_ID reference="id"/>
+                <Included_Tab_ID reference="id"/>
+                <AD_Field_UU>3716eab8-8626-4ee9-a7f7-70589586a1cd</AD_Field_UU>
+                <IsAllowCopy/>
+                <IsDisplayedGrid>Y</IsDisplayedGrid>
+                <SeqNoGrid>70</SeqNoGrid>
+                <XPosition>5</XPosition>
+                <ColumnSpan>2</ColumnSpan>
+                <NumLines>1</NumLines>
+                <IsQuickEntry>N</IsQuickEntry>
+                <IsUpdateable/>
+                <IsAlwaysUpdateable/>
+                <MandatoryLogic/>
+                <ReadOnlyLogic/>
+                <IsToolbarButton/>
+                <IsDefaultFocus>N</IsDefaultFocus>
+                <IsAdvancedField>N</IsAdvancedField>
+                <VFormat/>
+                <AD_LabelStyle_ID reference="id"/>
+                <AD_FieldStyle_ID reference="id"/>
+                <AD_Field_Trl type="translation">
+                    <Help>Hay dos métodos para que los registros no estén disponibles en el sistema: Uno es eliminar el registro; el otro es desactivarlo. Un registro desactivado no está disponible para selección; pero está disponible para Informes</Help>
+                    <Description>El registro está activo en el sistema</Description>
+                    <Name>Activo</Name>
+                    <AD_Language>es_EC</AD_Language>
+                    <IsActive>Y</IsActive>
+                    <IsTranslated>Y</IsTranslated>
+                </AD_Field_Trl>
+            </AD_Field>
+        </AD_Tab>
+    </AD_Menu>
+    <AD_Menu type="table">
+        <Parent_ID reference="id">53114</Parent_ID>
+        <SeqNo>4</SeqNo>
+        <AD_Menu_ID>53117</AD_Menu_ID>
+        <AD_Client_ID>0</AD_Client_ID>
+        <AD_Org_ID>0</AD_Org_ID>
+        <AD_Menu_ID>53117</AD_Menu_ID>
+        <Name>Payroll Definition</Name>
+        <Description>In a company, payroll is the sum of all financial records of salaries, wages, bonuses, and deductions.</Description>
+        <Action>W</Action>
+        <AD_Window_ID reference="id">53038</AD_Window_ID>
+        <AD_Workflow_ID reference="id"/>
+        <AD_Task_ID reference="id"/>
+        <IsActive>Y</IsActive>
+        <IsSummary>N</IsSummary>
+        <AD_Process_ID reference="id"/>
+        <IsSOTrx>N</IsSOTrx>
+        <AD_Form_ID reference="id"/>
+        <IsReadOnly>N</IsReadOnly>
+        <EntityType>EE02</EntityType>
+        <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+        <AD_Menu_UU>1d436c6f-e4b7-48ec-9521-79734857466f</AD_Menu_UU>
+        <AD_InfoWindow_ID reference="id"/>
+        <AD_Menu_Trl type="translation">
+            <Name>Definición Nómina</Name>
+            <Description>En una compañía, nómina es la suma de todos los registros financieros de salarios, devengados, bonificaciones y deducciones.</Description>
+            <AD_Language>es_EC</AD_Language>
+            <IsActive>Y</IsActive>
+            <IsTranslated>Y</IsTranslated>
+        </AD_Menu_Trl>
+        <AD_Ref_List type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>AMBAS</Name>
+            <Description/>
+            <AD_Reference_ID reference="uuid" reference-key="AD_Reference">39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_ID>
+            <ValidFrom/>
+            <ValidTo/>
+            <Value>AM</Value>
+            <IsActive>Y</IsActive>
+           <EntityType>ING_Payroll</EntityType>
+            <AD_Ref_List_UU>e0bb05f7-74d3-4b29-803d-8575605a0ab6</AD_Ref_List_UU>
+            <AD_Ref_List_Trl type="translation">
+                <Description/>
+                <Name>AMBAS</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>N</IsTranslated>
+            </AD_Ref_List_Trl>
+        </AD_Ref_List>
+        <AD_Column type="table">
+            <IsSyncDatabase>Y</IsSyncDatabase>
+            <AD_Table_ID reference="id">53093</AD_Table_ID>
+            <AD_Reference_Value_ID reference="uuid" reference-key="AD_Reference">39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_Value_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Version>0</Version>
+            <Name>Region</Name>
+            <Description/>
+            <Help/>
+            <AD_Val_Rule_ID reference="id"/>
+            <ColumnName>HR_Region</ColumnName>
+            <DefaultValue/>
+            <FieldLength>4</FieldLength>
+            <IsKey>N</IsKey>
+            <IsParent>N</IsParent>
+            <IsMandatory>N</IsMandatory>
+            <IsTranslated>N</IsTranslated>
+            <IsIdentifier>N</IsIdentifier>
+            <SeqNo>0</SeqNo>
+            <IsEncrypted>N</IsEncrypted>
+            <AD_Reference_ID reference="id">17</AD_Reference_ID>
+            <IsActive>Y</IsActive>
+            <VFormat/>
+            <Callout/>
+            <AD_Element_ID reference="uuid" reference-key="AD_Element">be0b06f9-1209-4425-b6fb-d501bb9eb937</AD_Element_ID>
+            <IsUpdateable>Y</IsUpdateable>
+            <AD_Process_ID reference="id"/>
+            <ValueMin/>
+            <ValueMax/>
+            <IsSelectionColumn>N</IsSelectionColumn>
+            <ReadOnlyLogic/>
+            <EntityType>ING_Payroll</EntityType>
+            <IsAlwaysUpdateable>N</IsAlwaysUpdateable>
+            <ColumnSQL/>
+            <MandatoryLogic/>
+            <IsAutocomplete>N</IsAutocomplete>
+            <IsAllowLogging>Y</IsAllowLogging>
+            <FormatPattern/>
+            <AD_Chart_ID reference="id"/>
+            <AD_Column_UU>118fe77c-a1a5-41bf-b420-4327e9cd44a7</AD_Column_UU>
+            <IsAllowCopy>Y</IsAllowCopy>
+            <SeqNoSelection>0</SeqNoSelection>
+            <IsToolbarButton>N</IsToolbarButton>
+            <IsSecure>N</IsSecure>
+            <FKConstraintName/>
+            <FKConstraintType>N</FKConstraintType>
+            <PA_DashboardContent_ID reference="id"/>
+        </AD_Column>
+        <AD_Field type="table">
+            <AD_Field_ID>55067</AD_Field_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <AD_Field_ID>55067</AD_Field_ID>
+            <Name>Payroll Contract</Name>
+            <Description/>
+            <Help/>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="id">54893</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>10</DisplayLength>
+            <SeqNo>80</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>N</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>563633a4-4e03-4a77-9433-a4ccafb3b0e4</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>70</SeqNoGrid>
+            <XPosition>1</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help/>
+                <Description/>
+                <Name>Contrato de Nómina</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Field_ID>55068</AD_Field_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <AD_Field_ID>55068</AD_Field_ID>
+            <Name>Payment Rule</Name>
+            <Description>How you pay the invoice</Description>
+            <Help>The Payment Rule indicates the method of invoice payment.</Help>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="id">54896</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>1</DisplayLength>
+            <SeqNo>90</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>Y</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>85265740-a4d0-48bb-a9cd-69f6b6d8b4ab</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>80</SeqNoGrid>
+            <XPosition>4</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help>La Regla de Pagos indica el método de pago de la factura</Help>
+                <Description>Como se pagará la factura</Description>
+                <Name>Regla de Pago</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Field_ID>55069</AD_Field_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <AD_Field_ID>55069</AD_Field_ID>
+            <Name>Print Format</Name>
+            <Description>Data Print Format</Description>
+            <Help>The print format determines how data is rendered for print.</Help>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="id">54888</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>10</DisplayLength>
+            <SeqNo>100</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>N</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>7ca21610-b971-4ca7-a106-a0402b02cd3a</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>90</SeqNoGrid>
+            <XPosition>1</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help>El formato de impresión determina como se despliegan los datos para la impresión</Help>
+                <Description>Formato de Impresión de datos</Description>
+                <Name>Formato de Impresión</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Field_ID>55070</AD_Field_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <AD_Field_ID>55070</AD_Field_ID>
+            <Name>Charge</Name>
+            <Description>Additional document charges</Description>
+            <Help>The Charge indicates a type of Charge (Handling, Shipping, Restocking)</Help>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="id">54889</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>22</DisplayLength>
+            <SeqNo>110</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>Y</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>a5d12a4b-6d58-4d3d-ab12-b85f2d901646</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>100</SeqNoGrid>
+            <XPosition>4</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help>El cargo indica un tipo de cargo (manejo, embalaje, reposición)</Help>
+                <Description>Cargos adicionales del documento</Description>
+                <Name>Cargo</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Field_ID>55071</AD_Field_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <AD_Field_ID>55071</AD_Field_ID>
+            <Name>Create Concept for Payroll</Name>
+            <Description/>
+            <Help/>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="id">54898</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>1</DisplayLength>
+            <SeqNo>120</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>N</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>ddfd3f8d-7862-4f30-a3e0-2563b5d54e36</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>110</SeqNoGrid>
+            <XPosition>2</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help/>
+                <Description/>
+                <Name>Crear Concepto para Nómina</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>Is employee Applicable</Name>
+            <Description/>
+            <Help/>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="uuid" reference-key="AD_Column">2c736d0a-1da6-4c7f-8988-a41942f2327f</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>0</DisplayLength>
+            <SeqNo>130</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>N</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>ING</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>ff251e72-b52e-495d-8156-4edc878195a7</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>130</SeqNoGrid>
+            <XPosition>2</XPosition>
+            <ColumnSpan>1</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help/>
+                <Description/>
+                <Name>Is employee Applicable</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>N</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Field_ID>55072</AD_Field_ID>
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <AD_Field_ID>55072</AD_Field_ID>
+            <Name>Processed</Name>
+            <Description>The document has been processed</Description>
+            <Help>The Processed checkbox indicates that a document has been processed.</Help>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="id">54897</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>1</DisplayLength>
+            <SeqNo>140</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>Y</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>Y</IsReadOnly>
+            <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>7cf02c20-e2fc-429b-807b-b74000fdc8f7</AD_Field_UU>
+            <IsAllowCopy>N</IsAllowCopy>
+            <IsDisplayedGrid>Y</IsDisplayedGrid>
+            <SeqNoGrid>120</SeqNoGrid>
+            <XPosition>5</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help>El cuadro de verificación procesada indica que un documento ha sido procesado</Help>
+                <Description>El documento ha sido procesado</Description>
+                <Name>Procesado</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>Include InActive Employee</Name>
+            <Description/>
+            <Help/>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="uuid" reference-key="AD_Column">0c9f1c65-316e-45cc-a125-c61a9255e8d0</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>0</DisplayLength>
+            <SeqNo>150</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>N</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>N</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>2accbbd4-0ce7-4217-8cbc-25fc927866e0</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>N</IsDisplayedGrid>
+            <SeqNoGrid>140</SeqNoGrid>
+            <XPosition>2</XPosition>
+            <ColumnSpan>1</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help/>
+                <Description/>
+                <Name>Incluir Empleados InActivos</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>N</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+        <AD_Field type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>All Organization</Name>
+            <Description/>
+            <Help/>
+            <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+            <AD_Column_ID reference="uuid" reference-key="AD_Column">35bb480e-8f9d-49cc-8441-82651ac8992c</AD_Column_ID>
+            <IsDisplayed>Y</IsDisplayed>
+            <DisplayLogic/>
+            <DisplayLength>0</DisplayLength>
+            <SeqNo>160</SeqNo>
+            <SortNo>0</SortNo>
+            <IsSameLine>N</IsSameLine>
+            <IsHeading>N</IsHeading>
+            <IsFieldOnly>N</IsFieldOnly>
+            <IsEncrypted>N</IsEncrypted>
+            <IsActive>Y</IsActive>
+            <IsReadOnly>N</IsReadOnly>
+            <IsCentrallyMaintained>N</IsCentrallyMaintained>
+            <AD_FieldGroup_ID reference="id"/>
+            <EntityType>EE02</EntityType>
+            <ObscureType/>
+            <AD_Reference_ID reference="id"/>
+            <IsMandatory/>
+            <DefaultValue/>
+            <AD_Reference_Value_ID reference="id"/>
+            <AD_Val_Rule_ID reference="id"/>
+            <Included_Tab_ID reference="id"/>
+            <AD_Field_UU>61683f5c-3ff9-4d70-a79e-ed5fa4fd6d6a</AD_Field_UU>
+            <IsAllowCopy/>
+            <IsDisplayedGrid>N</IsDisplayedGrid>
+            <SeqNoGrid>150</SeqNoGrid>
+            <XPosition>5</XPosition>
+            <ColumnSpan>2</ColumnSpan>
+            <NumLines>1</NumLines>
+            <IsQuickEntry>N</IsQuickEntry>
+            <IsUpdateable/>
+            <IsAlwaysUpdateable/>
+            <MandatoryLogic/>
+            <ReadOnlyLogic/>
+            <IsToolbarButton/>
+            <IsDefaultFocus>N</IsDefaultFocus>
+            <IsAdvancedField>N</IsAdvancedField>
+            <VFormat/>
+            <AD_LabelStyle_ID reference="id"/>
+            <AD_FieldStyle_ID reference="id"/>
+            <AD_Field_Trl type="translation">
+                <Help/>
+                <Description/>
+                <Name>All Organization</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>N</IsTranslated>
+            </AD_Field_Trl>
+        </AD_Field>
+    </AD_Menu>
+    <AD_Field type="table">
+        <AD_Client_ID>0</AD_Client_ID>
+        <AD_Org_ID>0</AD_Org_ID>
+        <Name>Region</Name>
+        <Description/>
+        <Help/>
+        <AD_Tab_ID reference="id">53115</AD_Tab_ID>
+        <AD_Column_ID reference="uuid" reference-key="AD_Column">203c1387-e57e-4ed1-8fbe-a68b9009ec10</AD_Column_ID>
+        <IsDisplayed>Y</IsDisplayed>
+        <DisplayLogic/>
+        <DisplayLength>4</DisplayLength>
+        <SeqNo>140</SeqNo>
+        <SortNo/>
+        <IsSameLine>N</IsSameLine>
+        <IsHeading>N</IsHeading>
+        <IsFieldOnly>N</IsFieldOnly>
+        <IsEncrypted>N</IsEncrypted>
+        <IsActive>Y</IsActive>
+        <IsReadOnly>N</IsReadOnly>
+        <IsCentrallyMaintained>Y</IsCentrallyMaintained>
+        <AD_FieldGroup_ID reference="id"/>
+        <EntityType>ING_Payroll</EntityType>
+        <ObscureType/>
+        <AD_Reference_ID reference="id"/>
+        <IsMandatory/>
+        <DefaultValue/>
+        <AD_Reference_Value_ID reference="id"/>
+        <AD_Val_Rule_ID reference="id"/>
+        <Included_Tab_ID reference="id"/>
+        <AD_Field_UU>0043b605-b508-4f2c-bd3c-4b2342a8eba9</AD_Field_UU>
+        <IsAllowCopy/>
+        <IsDisplayedGrid>Y</IsDisplayedGrid>
+        <SeqNoGrid>160</SeqNoGrid>
+        <XPosition>4</XPosition>
+        <ColumnSpan>2</ColumnSpan>
+        <NumLines>1</NumLines>
+        <IsQuickEntry>N</IsQuickEntry>
+        <IsUpdateable/>
+        <IsAlwaysUpdateable/>
+        <MandatoryLogic/>
+        <ReadOnlyLogic/>
+        <IsToolbarButton/>
+        <IsDefaultFocus>N</IsDefaultFocus>
+        <IsAdvancedField>N</IsAdvancedField>
+        <VFormat/>
+        <AD_LabelStyle_ID reference="id"/>
+        <AD_FieldStyle_ID reference="id"/>
+        <AD_Field_Trl type="translation">
+            <Help/>
+            <Description/>
+            <Name>Region</Name>
+            <AD_Language>es_EC</AD_Language>
+            <IsActive>Y</IsActive>
+            <IsTranslated>N</IsTranslated>
+        </AD_Field_Trl>
+    </AD_Field>
+    <AD_Reference type="table">
+        <AD_Client_ID>0</AD_Client_ID>
+        <AD_Org_ID>0</AD_Org_ID>
+        <Name>HR_RegionRef</Name>
+        <Description/>
+        <Help/>
+        <ValidationType>L</ValidationType>
+        <IsActive>Y</IsActive>
+        <VFormat/>
+        <EntityType>ING</EntityType>
+        <IsOrderByValue>N</IsOrderByValue>
+        <AD_Reference_UU>39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_UU>
+        <AD_Reference_Trl type="translation">
+            <Help/>
+            <Name>HR_RegionRef</Name>
+            <Description/>
+            <AD_Language>es_EC</AD_Language>
+            <IsActive>Y</IsActive>
+            <IsTranslated>N</IsTranslated>
+        </AD_Reference_Trl>
+        <AD_Ref_List type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>Coast</Name>
+            <Description/>
+            <AD_Reference_ID reference="uuid" reference-key="AD_Reference">39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_ID>
+            <ValidFrom/>
+            <ValidTo/>
+            <Value>CO</Value>
+            <IsActive>Y</IsActive>
+            <EntityType>ING</EntityType>
+            <AD_Ref_List_UU>5fb4269b-8de4-4af6-857b-95130bb418ee</AD_Ref_List_UU>
+            <AD_Ref_List_Trl type="translation">
+                <Description/>
+                <Name>Costa</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Ref_List_Trl>
+        </AD_Ref_List>
+        <AD_Ref_List type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>Sierra</Name>
+            <Description/>
+            <AD_Reference_ID reference="uuid" reference-key="AD_Reference">39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_ID>
+            <ValidFrom/>
+            <ValidTo/>
+            <Value>SI</Value>
+            <IsActive>Y</IsActive>
+            <EntityType>ING</EntityType>
+            <AD_Ref_List_UU>f5821a25-fd69-4dc9-9430-44a3ce015a1c</AD_Ref_List_UU>
+            <AD_Ref_List_Trl type="translation">
+                <Description/>
+                <Name>Sierra</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>N</IsTranslated>
+            </AD_Ref_List_Trl>
+        </AD_Ref_List>
+        <AD_Ref_List type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>East</Name>
+            <Description/>
+            <AD_Reference_ID reference="uuid" reference-key="AD_Reference">39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_ID>
+            <ValidFrom/>
+            <ValidTo/>
+            <Value>EA</Value>
+            <IsActive>Y</IsActive>
+            <EntityType>ING</EntityType>
+            <AD_Ref_List_UU>36d22930-3321-4151-903a-a86adf27796b</AD_Ref_List_UU>
+            <AD_Ref_List_Trl type="translation">
+                <Description/>
+                <Name>Este</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Ref_List_Trl>
+        </AD_Ref_List>
+        <AD_Ref_List type="table">
+            <AD_Client_ID>0</AD_Client_ID>
+            <AD_Org_ID>0</AD_Org_ID>
+            <Name>Ambas</Name>
+            <Description/>
+            <AD_Reference_ID reference="uuid" reference-key="AD_Reference">39e1c126-5bd3-4ab8-8e07-444a2b9b02fe</AD_Reference_ID>
+            <ValidFrom/>
+            <ValidTo/>
+            <Value>AM</Value>
+            <IsActive>Y</IsActive>
+            <EntityType>ING_Payroll</EntityType>
+            <AD_Ref_List_UU>e0bb05f7-74d3-4b29-803d-8575605a0ab6</AD_Ref_List_UU>
+            <AD_Ref_List_Trl type="translation">
+                <Description/>
+                <Name>Ambas</Name>
+                <AD_Language>es_EC</AD_Language>
+                <IsActive>Y</IsActive>
+                <IsTranslated>Y</IsTranslated>
+            </AD_Ref_List_Trl>
+        </AD_Ref_List>
+    </AD_Reference>
+</idempiere>
