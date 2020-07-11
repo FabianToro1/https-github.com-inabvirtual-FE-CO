@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="FE-EC_Callout">
+   <implementation class="ve.net.dcs.component.LEC_FE_CalloutFatory"/>
+   <service>
+      <provide interface="org.adempiere.base.IColumnCalloutFactory"/>
+   </service>
+</scr:component>
