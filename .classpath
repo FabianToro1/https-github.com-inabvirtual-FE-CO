@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="lib" path="lib/jdom-2.0.5/jdom-2.0.5.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="lib/bcmail-jdk16-1.45.jar"/>
+	<classpathentry kind="lib" path="lib/bcprov-jdk16-1.45.jar"/>
+	<classpathentry kind="lib" path="lib/bctsp-jdk16-1.45.jar"/>
+	<classpathentry kind="lib" path="lib/cliente-file-ws.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibAPI-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibCert-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibCrypt-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibOCSP-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibPolicy-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibTrust-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibTSA-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/MITyCLibXADES-1.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/xmlsec-1.4.2-ADSI-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging-1.2.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
