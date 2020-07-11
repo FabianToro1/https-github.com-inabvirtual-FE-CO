@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?><idempiere Name="Offline Schema" Version="1" idempiereVersion="" DataBaseVersion="" Description="" Author="" AuthorEmail="" CreatedDate="2016-07-20 15:53:41.629" UpdatedDate="2016-09-21 09:14:04.489" PackOutVersion="100" UpdateDictionary="false" Client="1000001-KOREA SERVICES S.A.S." AD_Client_UU="c37a7bbd-1685-48eb-8371-d651bf3aca99">
+    <AD_SysConfig type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <IsActive>Y</IsActive>
+        <Name>QSSLEC_FE_OfflineSchema</Name>
+        <Value>Y</Value>
+        <Description>Esquema Offline</Description>
+        <EntityType>U</EntityType>
+        <ConfigurationLevel>C</ConfigurationLevel>
+        <AD_SysConfig_UU>890de06e-abbf-4bc4-9669-468abc936d16</AD_SysConfig_UU>
+    </AD_SysConfig>
+    <AD_SysConfig type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <IsActive>Y</IsActive>
+        <Name>QSSLEC_FE_SRIURLWSCertAutorizacionComprobante</Name>
+        <Value>https://celcer.sri.gob.ec/comprobantes-electronicos-ws/AutorizacionComprobantesOffline?wsdl</Value>
+        <Description>URL WS Certificacion Autorizacion Comprobante</Description>
+        <EntityType>QSSLEC_FE</EntityType>
+        <ConfigurationLevel>C</ConfigurationLevel>
+        <AD_SysConfig_UU>09f53600-1719-40a0-974f-e4e0b6320833</AD_SysConfig_UU>
+    </AD_SysConfig>
+    <AD_SysConfig type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <IsActive>Y</IsActive>
+        <Name>QSSLEC_FE_SRIURLWSCertRecepcionComprobante</Name>
+        <Value>https://celcer.sri.gob.ec/comprobantes-electronicos-ws/RecepcionComprobantesOffline?wsdl</Value>
+        <Description>URL WS Certificacion Recepcion Comprobante</Description>
+        <EntityType>QSSLEC_FE</EntityType>
+        <ConfigurationLevel>C</ConfigurationLevel>
+        <AD_SysConfig_UU>09f53600-1719-40a0-974f-e4e0b6320833</AD_SysConfig_UU>
+    </AD_SysConfig>
+    <AD_SysConfig type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <IsActive>Y</IsActive>
+        <Name>QSSLEC_FE_ResponseReceptionClass</Name>
+        <Value>ec.ingeint.util.ws.RecepcionComprobantesOffline</Value>
+        <Description>Response Recepcion Interface</Description>
+        <EntityType>U</EntityType>
+        <ConfigurationLevel>O</ConfigurationLevel>       <AD_SysConfig_UU>626f537f-47ba-4f41-9cb0-3ba1254fd712</AD_SysConfig_UU>
+    </AD_SysConfig>
+    <AD_SysConfig type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <IsActive>Y</IsActive>
+        <Name>QSSLEC_FE_ResponseAutorizationClass</Name>
+        <Value>ec.ingeint.util.ws.AutorizacionComprobantesOffline</Value>
+        <Description>Response Autorization Interface</Description>
+        <EntityType>U</EntityType>
+        <ConfigurationLevel>O</ConfigurationLevel>
+        <AD_SysConfig_UU>44a4544b-4df1-40f2-ab28-7b221cf0a86c</AD_SysConfig_UU>
+    </AD_SysConfig>
+    <AD_SysConfig type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <IsActive>Y</IsActive>
+        <Name>QSSLEC_FE_OfflineSchemaApproverUser</Name>
+        <Value>1000006</Value>
+        <Description>Usuario Aprobador Esquema Offline</Description>
+        <EntityType>U</EntityType>
+        <ConfigurationLevel>C</ConfigurationLevel>
+        <AD_SysConfig_UU>192adac9-3269-4378-b021-df288f54aba6</AD_SysConfig_UU>
+    </AD_SysConfig>
+        <AD_Scheduler type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <Supervisor_ID reference="id">0</Supervisor_ID>
+        <IsActive>Y</IsActive>
+        <Processing>N</Processing>
+        <AD_Process_ID reference="uuid" reference-key="AD_Process">2c816172-449b-469f-8492-619575090285</AD_Process_ID>
+        <DateNextRun>2016-09-21 09:34:29.513</DateNextRun>
+        <Description/>
+        <Name>Generate Offline Authorizations</Name>
+        <KeepLogDays>7</KeepLogDays>
+        <DateLastRun>2016-09-21 09:24:29.513</DateLastRun>
+        <AD_Table_ID reference="id"/>
+        <Record_ID reference="id"/>
+        <AD_Scheduler_UU>99ef5598-f74f-40e3-8446-770419ba7b17</AD_Scheduler_UU>
+        <AD_Schedule_ID reference="id">200002</AD_Schedule_ID>
+        <R_MailText_ID reference="id"/>
+    </AD_Scheduler>
+    <AD_Scheduler type="table">
+        <AD_Org_ID>0</AD_Org_ID>
+        <Supervisor_ID reference="id">0</Supervisor_ID>
+        <IsActive>Y</IsActive>
+        <Processing>N</Processing>
+        <AD_Process_ID reference="uuid" reference-key="AD_Process">0b2d1af6-07df-4fe6-be4f-4b2ca23a9e4b</AD_Process_ID>
+        <DateNextRun>2016-09-21 09:34:29.516</DateNextRun>
+        <Description/>
+        <Name>Process Offline Authorizations</Name>
+        <KeepLogDays>7</KeepLogDays>
+        <DateLastRun>2016-09-21 09:24:29.516</DateLastRun>
+        <AD_Table_ID reference="id"/>
+        <Record_ID reference="id"/>
+        <AD_Scheduler_UU>b53bfbac-c9af-4dd6-949f-1cb149e6ee99</AD_Scheduler_UU>
+        <AD_Schedule_ID reference="id">200002</AD_Schedule_ID>
+        <R_MailText_ID reference="id"/>
+    </AD_Scheduler>
+</idempiere>

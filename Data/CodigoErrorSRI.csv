@@ -1,0 +1,44 @@
+AD_Org_ID[Name],Value,Name,Description,IsActive
+*,10,Establecimiento del emisor se encuentra Clausurado,"No se autorizará comprobantes si el establecimiento emisor ha sido clausurado, automáticamente se habilitará el servicio una vez concluida la clausura",Y
+*,70,Clave de acceso en procesamiento,Cuando se desea enviar un comprobante que ha sido enviado anteriormente y el mismo no ha terminado su procesamiento,Y
+*,43,Clave acceso registrada,,Y
+*,45,Secuencial registrado,,Y
+*,50,Error interno general,,Y
+*,68,Documento Sustento,,Y
+*,170,Clave de contingencia pendiente,,Y
+*,150,Error sin codificar,Revise consola java,Y
+*,2,RUC del emisor se encuentra NO ACTIVO,Verificar que el numero de RUC se encuentre en estado ACTIVO,Y
+*,26,Tama�o maximo superado,Tama�o del archivo supera lo establecido,Y
+*,27,Clase no permitido,La clase del contribuyente no puede emitir comprobantes electronicos.,Y
+*,28,Acuerdo me medios electronicos no aceptado,Siempre el contribuyente debe haber aceptado el Acuerdo de medio electronicos en el cual se establece que se acepta que lleguen las notificaciones al buzon del contribuyente.,Y
+*,33,Direccion Ip sancionada,Cuando la direccion desde la cual esta llamando muchas veces al servicio en un tiempo determinado,Y
+*,34,Comprobante no autorizado,Cuando el comprobante no ha sido autorizado como parte de la solicitud de emision del contribuyente.,Y
+*,35,Documento Invalido,Cuando el xml no pasa validacion de esquema.,Y
+*,36,Version esquema descontinuada,Cuando la version del esquema no es la correcta.,Y
+*,37,RUC sin autorizacion de emision,Cuando el RUC del emisor no cuenta con una solicitud de emision de comprobantes electronicos.,Y
+*,39,Firma invalida,Firma electronica del emisor no es valida.,Y
+*,40,Error en el certificado,No se encontro el certificado o no se puede convertir en certificad X509.,Y
+*,42,Certificado revocado,"Certificado que ha superado su fecha de caducidad, y no ha sido renovado.",Y
+*,46,RUC no existe,Cuando el ruc emisor no existe en el Registro Unico de Contribuyentes.,Y
+*,47,Tipo de comprobante no existe,Cuando envian en el tipo de comprobante uno que no exista en el catalogo de nuestros tipos de comprobantes.,Y
+*,48,Esquema XSD no existe,Cuando el esquema para el tipo de comprobante enviado no existe.,Y
+*,49,Argumentos que envian al WS nulos,Cuando se consume el WS con argumentos nulos.,Y
+*,52,Error en diferencias,Cuando existe error en los calculos del comprobante.,Y
+*,53,Claves no registradas,Cuando envian comprobantes electronicos que hayan sido generados en contingencia y las claves de acceso no son las que entrego la Administracion Tributaria al contribuyente emisor.,Y
+*,56,Establecimiento Cerrado,Cuando el establecimiento desde el cual se genera el comprobante se encuentra cerrado.,Y
+*,57,Autorizacion suspendida,Cuando la autorizacion para emision de comprobantes electronicos para el emisor se encuentra suspendida por procesos de control de la Administracion Tributaria.,Y
+*,58,Error en la estructura de clave acceso,Cuando la clave de acceso tiene componentes diferentes a los del comprobante.,Y
+*,63,RUC clausurado,Cuando el RUC del emisor se encuentra clausurado por procesos de control de la Administracion Tributaria.,Y
+*,64,Codigo documento sustento,Cuando el codigo del documento sustento no existe en el catalogo de documentos que se tiene en la Administracion.,Y
+*,65,Fecha de emision extemporanea,Cuando el comprobante emitido no fue enviado de acuerdo al tiempo del tipo de emisión en el cual fue realizado.,Y
+*,66,Clave reportada,Cuando el comprobante es emitido en tipo de emision contingente y utilizan una clave que ya fue registrada para otros comprobante en el mismo tipo de emision.,Y
+*,67,Fecha invalida,Cuando existe errores en el formato de la fecha,Y
+*,69,Identificacion del receptor,Cuando la identificacion asociada al adquirente no existe. En general cuando el RUC del adquirente no existe en el Registro Unico de Contribuyentes.,Y
+*,71,El ruc de la cabecera del lote es diferente,Cuando el ruc del emisor de la cabecera del comprobante que forma un lote es diferente al ruc del emisor de la cabecera del lote masivo.,Y
+*,72,Error al procesar el xml del comprobante recibido al obtener el ruc del archivo xml.,Cuando el ruc del emisior de cada comprobante que pertenece al lote masivo se encuentra mal formado en su estructura.,Y
+*,74,El codigo de documento de la cabecera del lote es diferente al codigo del documento del comprobante recibido,Cuando el codDoc de la cabecera del lote masivo es diferente al codDoc de la cabecera del comprobante recibido que forma parte del lote masivo.,Y
+*,75,Error en el codigo del documento del lote,"Cuando el codDoc del documento del lote masivo es diferente a los codigos de documentos de los comprobantes que son admitidos(Facturas, Notas de Credito, Notas de Debito, Guias de Remision, Comprobantes de Retencion).",Y
+*,77,Error de conversion en la estructura del archivo xml del comprobante del lote,"Cuando el CodDoc de la cabecera del comprobante que pertenece a un lote masivo esta formado por letras, esta vacio, o no tiene el tag. Cuando en la cabecera del comprob que pertenece a un lote masivo,en el Ruc del Emisor se envia un Ruc que no hay en SRI.",Y
+*,59,Identificación no existe,Cuando el numero de la identificacion del adquirente no existe.,Y
+*,60,Ambiente ejecucion.,Siempre que el comprobante sea emitido en ambiente de certificacion o pruebas se enviara como parte de la autorizacion esta advertencia.,Y
+*,70-Duplicada,Clave de acceso en procesamiento - Duplicada,Cuando se desea enviar un comprobante que ha sido enviado anteriormente y el mismo no ha terminado su procesamiento.,Y

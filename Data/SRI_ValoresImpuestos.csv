@@ -1,0 +1,15 @@
+AD_Org_ID[Name],Description,SRI_TaxCodeValue,SRI_TaxCodeName,IsActive,SRI_TaxRate>AD_Org_ID[Name],SRI_TaxRate>Description,SRI_TaxRate>SRI_TaxCode_ID,SRI_TaxRate>IsActive,SRI_TaxRate>SRI_TaxRateName,SRI_TaxRate>SRI_TaxRateValue
+*,,2,IVA,Y,*,,1000000,Y,0%,0
+,,,,,*,,1000000,Y,12%,2
+,,,,,*,,1000000,Y,No Objeto de Impuesto,6
+,,,,,*,,1000000,Y,Exento de IVA,7
+*,,3,ICE,Y,*,"Productos del tabaco y sucedáneos del tabaco (abarcan los productos preparados
+totalmente o en parte utilizando como materia prima hojas de tabaco y destinados a ser
+fumados, chupados, inhalados, mascados o utilizados como rapé).",1000001,Y,Productos del tabaco y sucedáneos del tabaco,3023
+,,,,,*,,1000001,Y,Bebidas gaseosas,3051
+,,,,,*,,1000001,Y,Perfumes y aguas de tocador,3610
+,,,,,*,,1000001,Y,Videojuegos,3620
+,,,,,*,"Armas de fuego, armas deportivas y municiones excepto aquellas adquiridas por la
+fuerza pública",1000001,Y,"Armas de fuego, armas deportivas y municiones",3630
+,,,,,*,Focos incandescentes excepto aquellos utilizados como insumos automotrices,1000001,Y,Focos incandescentes excto utilizados como insumo automotric,3640
+*,,5,IRBPNR,Y,,,,,,
